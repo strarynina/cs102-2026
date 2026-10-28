@@ -14,12 +14,12 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
 
     for char in plaintext:
         if char.isalpha():
-            shift = ord(keyword[key_index % len(keyword)]) - ord('a')
+            shift = ord(keyword[key_index % len(keyword)]) - ord("a")
 
             if char.isupper():
-                start = ord('A')
+                start = ord("A")
             else:
-                 start = ord('a')
+                start = ord("a")
 
             position = ord(char) - start
             new_position = (position + shift) % 26
@@ -32,7 +32,6 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
         key_index += 1
 
     return ciphertext
-
 
 
 def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
@@ -51,12 +50,12 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
 
     for char in ciphertext:
         if char.isalpha():
-            shift = ord(keyword[key_index % len(keyword)]) - ord('a')
+            shift = ord(keyword[key_index % len(keyword)]) - ord("a")
 
             if char.isupper():
-                start = ord('A')
+                start = ord("A")
             else:
-                start = ord('a')
+                start = ord("a")
 
             position = ord(char) - start
             new_position = (position - shift) % 26
